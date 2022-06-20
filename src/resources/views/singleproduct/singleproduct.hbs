@@ -1,0 +1,126 @@
+<!-- breadcrumb part start-->
+    <section class="breadcrumb_part single_product_breadcrumb">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb_iner">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- breadcrumb part end-->
+
+  <!--================Single Product Area =================-->
+  <div class="product_image_area">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-12">
+          <div class="product_img_slide owl-carousel">
+            <div class="single_product_img">
+              <img src="{{data._img}}" alt="#" class="img-fluid">
+            </div>
+            <div class="single_product_img">
+              <img src="{{data._img}}" alt="#" class="img-fluid">
+            </div>
+            <div class="single_product_img">
+              <img src="{{data._img}}" alt="#" class="img-fluid">
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-8">
+          <div class="single_product_text text-center">
+            <h3>{{data._nameproduct}} <br>
+                </h3>
+            <p>
+                {{data._detail}}
+            </p>
+            <div class="card_area">
+                <div class="product_count_area">
+                    
+                    <p>${{data._price}}</p>
+                </div>
+              <div class="add_to_cart">
+                  <a href="/singleproduct/{{data._id}}/add" class="btn_3">add to cart</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--================End Single Product Area =================-->
+  <!-- client review part here -->
+    <section class="client_review">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="client_review_slider owl-carousel">
+                        {{#each comments}}
+                        <div class="single_client_review">
+                            <div class="client_img">
+                                <img src="/img/client.png" alt="#">
+                            </div>
+                            <p>"{{this._message}}.</p>
+                            <h5>- {{this._nameuser}}</h5>
+                        </div>
+                        {{/each}}
+                        
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+    
+    <!-- client review part end -->
+    <!--================Product Description Area =================-->
+	<section class="product_description_area">
+		<div class="container">
+			<ul class="nav nav-tabs" id="myTab" role="tablist">
+				
+				
+				<li class="nav-item">
+					<a class="nav-link active" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact"
+					 aria-selected="false">Comments</a>
+				</li>
+				
+			</ul>
+			<div class="tab-content" id="myTabContent">
+				
+				
+				<div class="tab-pane fade show active" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+					<div class="row">
+						
+						<div class="col-lg-8">
+							<div class="review_box">
+								<h4>Post a comment</h4>
+								<form class="row contact_form" action="/singleproduct/{{data._slug}}/store" method="post" id="contactForm" novalidate="novalidate">
+									<div class="col-md-12">
+										<div class="form-group">
+											<input type="text" class="form-control" id="nameuser" name="_nameuser" placeholder="Your Full name">
+										</div>
+									</div>
+									
+									
+									<div class="col-md-12">
+										<div class="form-group">
+											<textarea type="text" class="form-control" name="_message" id="message" rows="1" placeholder="Message"></textarea>
+										</div>
+									</div>
+									<div class="col-md-12 text-right">
+										<button  type="submit" value="submit" class="btn btn-primary btn-lg">Submit Now</button>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	</section>
+	<!--================End Product Description Area =================-->
+  
+
+

@@ -1,0 +1,97 @@
+<!-- Start Banner Area -->
+    <section class="banner-area organic-breadcrumb">
+        <div class="container">
+            <div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
+                <div class="col-first">
+                    <h1>Search</h1>
+                    <nav class="d-flex align-items-center">
+                        <a href="/home">Home<span class="lnr lnr-arrow-right"></span></a>
+                        <a href="/product?page=1&cate=all&nsx=all">Fashion Category</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Banner Area -->
+
+  
+    <section class="tracking_box_area section_gap">
+        <div class="container">
+            <div class="tracking_box_inner">
+            
+                <form class="row tracking_form" action="/search" method="get" novalidate="novalidate">
+                    <div class="col-md-12 form-group">
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Name'">
+                    </div>
+                    <div class="col-md-12 form-group">
+                        <input type="text" class="form-control" id="cate" name="cate" placeholder="Category" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Category'">
+                    </div>
+                      <div class="col-md-12 form-group">
+                        <input type="text" class="form-control" id="procedure" name="procedure" placeholder="Manufacturer" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Manufacturer'">
+                    </div>
+                    <div class="col-md-12 form-group">
+                        <input type="text" class="form-control" id="price" name="price" placeholder="Price" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Price'">
+                    </div>
+                    <div  class="col-md-12 form-group">
+                        <button type="submit" value="submit" class="primary-btn">Search</button>
+                    </div>
+                    
+                        <div class="section-title">
+							<h1>    Result</h1>
+							
+						</div>
+                       
+                    
+                </form>
+            </div>
+        </div>
+    </section>
+    <div class="container">
+		<div class="row">
+            
+            <div class="col-xl-9 col-lg-8 col-md-7">
+				
+				<!-- Start Best Seller -->
+				<section class="lattest-product-area pb-40 category-list">
+					<div class="row">
+						<!-- single product -->
+						{{#each products}}
+						<div class="col-lg-4 col-md-6">
+							<div class="single-product">
+								<a href="/singleproduct/{{this._slug}}">
+									<img height="250" width="250" src="{{this._img}}" alt="">
+								</a>
+								
+								<div class="product-details">
+									<h6>{{this._nameproduct}}</h6>
+									<div class="price">
+										<h6>{{this._price}}</h6>
+										
+									</div>
+									
+								</div>
+							</div>
+						</div>
+						{{/each}}
+				</section>
+				<!-- End Best Seller -->
+				<!-- Start Filter Bar -->
+				<div class="filter-bar d-flex flex-wrap align-items-center">
+					<div class="sorting mr-auto">
+						
+					</div>
+					<div class="pagination">
+						{{#each page_items}}
+						{{#if isActive}}
+						<a href="?name={{this.name}}&cate={{this.cate}}&procedure={{this.proce}}&price={{this.pri}}&page={{this.value}}" class="active">{{this.value}}</a>
+						{{else}}
+    					<a href="?name={{this.name}}&cate={{this.cate}}&procedure={{this.proce}}&price={{this.pri}}&page={{this.value}}">{{this.value}}</a>
+						{{/if}}
+						{{/each}}
+						</div>
+				</div>
+				<!-- End Filter Bar -->
+			</div>
+        </div>
+    </div>
+
