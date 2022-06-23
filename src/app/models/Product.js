@@ -15,6 +15,7 @@ const Product = new Schema({
   _v:{type:String},
   _procedure:{type:String},
   _booth:{type:Boolean},
+  _trend:{type:Boolean},
   
 
 
