@@ -15,6 +15,7 @@ class ChangePassWordController{
         {
             if(req.session.customer)
             {
+                const Active=TRUE
                 const info="Your Information"
                 const logout="Logout"
                 const change="Change Password"
@@ -32,6 +33,7 @@ class ChangePassWordController{
     check(req,res,next)
     {
         if(req.body.password!=req.session.customer._password){
+            const Active=TRUE
             const info="Your Information"
             const logout="Logout"
             const change="Change Password"
@@ -40,7 +42,9 @@ class ChangePassWordController{
 
         }
         else if(req.body.newpassword!=req.body.repeatpassword)
+
         {
+            const Active=TRUE
             const info="Your Information"
             const logout="Logout"
             const change="Change Password"
@@ -52,6 +56,7 @@ class ChangePassWordController{
         {
             req.session.customer._password=req.body.newpassword
             var message="Your password has been changed successfully "
+            const Active=TRUE
             const info="Your Information"
             const logout="Logout"
             const change="Change Password"

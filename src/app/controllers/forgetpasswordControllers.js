@@ -16,6 +16,7 @@ class ForgetPasswordController{
         
         if(req.session.customer)
         {
+            const Active=TRUE
             const info="Your information"
             const logout="Logout"
             const change="Change Password"
@@ -70,6 +71,7 @@ class ForgetPasswordController{
                         message="Email is invalid"
                         if(req.session.customer)
                         {
+                            const Active=TRUE
                             const info="Your information"
                             const logout="Logout"
                             const change="Change Password"
@@ -92,6 +94,7 @@ class ForgetPasswordController{
                             message="We have sent you a message in your email "+Object._email+" with a random password.Please Sign in your email and take it" 
                             if(req.session.customer)
                             {
+                                const Active=TRUE
                                 const info="Your information"
                                 const logout="Logout"
                                 const change="Change Password"

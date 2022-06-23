@@ -43,6 +43,7 @@ class HomeController{
                 {
                   if(req.session.customer)
                   {
+                    const Active=TRUE
                       const info="Your Information"
                       const logout="Logout"
                       const change="Change Password"

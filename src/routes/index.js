@@ -7,7 +7,7 @@ const confirmationRouter=require('./confirmation')
 
 const homeRouter=require('./home')
 const loginRouter=require('./login')
-const searchRouter=require('./search')
+
 const registrationRouter=require('./registration')
 const infoRouter=require('./info')
 const logoutRouter=require('./logout')
@@ -28,7 +28,7 @@ function route(app){
 
     app.use('/home',homeRouter)
     app.use('/login',loginRouter)
-    app.use('/search',searchRouter)
+    
     app.use('/registration',registrationRouter)
     
       

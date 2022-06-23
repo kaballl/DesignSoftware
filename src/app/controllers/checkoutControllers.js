@@ -16,6 +16,7 @@ class CheckOutController{
 
             if(req.session.customer)
             {
+                const Active=TRUE
                 const info="Your Information"
                 const logout="Logout"
                 const change="Change Password"
@@ -55,6 +56,7 @@ class CheckOutController{
         if(req.body.address==""||req.body.number=="")
         {
             var message="You must complete the delivery information(Address,Number)"
+            const Active=TRUE
             const info="Your information"
             const logout="Logout"
             const change="Change Password"
@@ -100,6 +102,7 @@ class CheckOutController{
             orderData.save()
             .then(()=>{
                 var message="Thank you. Your order has been received."
+                const Active=TRUE
                 const info="Your information"
                 const logout="Logout"
                 const change="Change Password"

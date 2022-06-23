@@ -16,9 +16,10 @@ class RegistrationController{
         
         if(req.session.customer)
         {
-            const info="Your information"
+            const info="Your Information"
             const logout="Logout"
             const change="Change Password"
+            const Active=TRUE
             res.render('registration',{info,logout,change})
         }
         else
@@ -68,6 +69,7 @@ class RegistrationController{
                         message="Your email is invalid"
                         if(req.session.customer)
                         {
+                            const Active=TRUE
                             const info="Your information"
                             const logout="Logout"
                             const change="Change Password"
@@ -95,6 +97,7 @@ class RegistrationController{
                             message="Thank you.Your account has been successfully created.Please check out your email to take the password"
                             if(req.session.customer)
                             {
+                                const Active=TRUE
                                 const info="Your information"
                                 const logout="Logout"
                                 const change="Change Password"

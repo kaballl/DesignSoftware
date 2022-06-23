@@ -36,6 +36,7 @@ class ConfirmationController{
                             result.push(item)
                             if(i==data.length-1)
                             {
+                                const Active=TRUE
                                 const info="Your Information"
                                 const logout="Logout"
                                 const change="Change Password"

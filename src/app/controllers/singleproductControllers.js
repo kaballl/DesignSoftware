@@ -2,6 +2,7 @@
 const Product=require('../models/Product')
 const Comment=require('../models/Comment')
 const{mongooseToObject, relatedProduct}=require('../../util/mongoose')
+const { TRUE } = require('node-sass')
 var PAGE_SIZE=2
 
 
@@ -31,9 +32,11 @@ class SingleProductController{
                                 
                                     if(req.session.customer)
                                     {
+
                                         const info="Your Information"
                                         const logout="Logout"
                                         const change="Change Password"
+                                        const Active=TRUE
                                         res.render('singleproduct/singleproduct',{change,info,logout,comments,data:mongooseToObject (data)})
                                     }
                                     else
