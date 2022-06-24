@@ -42,7 +42,7 @@ class ForgetPasswordController{
             if(forgetPasswordCheck(datas,req.body._username))
             {
                 var Object=getObjectForgetPassword(datas,req.body._username);
-                console.log(Object)
+                console.log(Object._email)
                 var chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
                 var string_length = 6;
                 var randomstring = '';
@@ -54,15 +54,17 @@ class ForgetPasswordController{
                 let transporter=nodemailer.createTransport({
                     service:'gmail',
                     auth:{
-                        user:'ptudwshop20212022@gmail.com',
-                        pass:'Leminhduc0505@'
-                    }
+                        user:'leminhduc050501@gmail.com',
+                        pass:'cyggtiusfzavsmxa'
+                    },
+                    port: 465,
+                    host: 'smtp.gmail.com'
                 })
         
                 let mailOptions={
-                    from:'ptudwshop20212022@gmail.com',
-                    to:Object._email,
-                    subject:'PTUDWShop',
+                   from:'leminhduc050501@gmail.com',
+                   to:Object._email,
+                    subject:'DesignSoftware',
                     text:'Your password is '+ randomstring
                 }
                 transporter.sendMail(mailOptions,function(err,data){
@@ -87,7 +89,7 @@ class ForgetPasswordController{
         
                     }
                     else{
-                        console.log('email sent')
+                        
                         
                         Customer.findByIdAndUpdate(Object._id,{_password:randomstring})
                         .then(()=>{
