@@ -1,7 +1,7 @@
 const { error } = require('npmlog')
 const { notExistProcedure } = require('../../util/mongoose')
 const Product=require('../models/Product')
-var PAGE_SIZE=2
+var PAGE_SIZE=6
 
 
 class ProductController{

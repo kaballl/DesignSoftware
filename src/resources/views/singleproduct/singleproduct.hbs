@@ -38,10 +38,10 @@
             <div class="card_area">
                 <div class="product_count_area">
                     
-                    <p>${{data._price}}</p>
+                    <p>{{data._price}}₫</p>
                 </div>
               <div class="add_to_cart">
-                  <a href="/singleproduct/{{data._id}}/add" class="btn_3">add to cart</a>
+                  <a href="/singleproduct/{{data._id}}/add" class="btn_3">thêm vào giỏ hàng</a>
               </div>
             </div>
           </div>
@@ -82,7 +82,7 @@
 				
 				<li class="nav-item">
 					<a class="nav-link active" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact"
-					 aria-selected="false">Comments</a>
+					 aria-selected="false">Reviews</a>
 				</li>
 				
 			</ul>
@@ -94,22 +94,22 @@
 						
 						<div class="col-lg-8">
 							<div class="review_box">
-								<h4>Post a comment</h4>
+								<h4>Review về sản phẩm</h4>
 								<form class="row contact_form" action="/singleproduct/{{data._slug}}/store" method="post" id="contactForm" novalidate="novalidate">
 									<div class="col-md-12">
 										<div class="form-group">
-											<input type="text" class="form-control" id="nameuser" name="_nameuser" placeholder="Your Full name">
+											<input type="text" class="form-control" id="nameuser" name="_nameuser" placeholder="Tên của bạn">
 										</div>
 									</div>
 									
 									
 									<div class="col-md-12">
 										<div class="form-group">
-											<textarea type="text" class="form-control" name="_message" id="message" rows="1" placeholder="Message"></textarea>
+											<textarea type="text" class="form-control" name="_message" id="message" rows="1" placeholder="Lời nhận xét của bạn về sản phẩm"></textarea>
 										</div>
 									</div>
 									<div class="col-md-12 text-center">
-										<button  type="submit" value="submit" class="btn_3">Submit Now</button>
+										<button  type="submit" value="submit" class="btn_3">Đăng nhận xét của bạn</button>
 									</div>
 								</form>
 							</div>

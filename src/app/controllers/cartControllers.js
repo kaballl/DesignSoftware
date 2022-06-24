@@ -13,6 +13,8 @@ class CartController{
   
     index(req,res,next){
         {
+            if(req.session.customer)
+            {
             var data=[]
             data=req.session.data
             
@@ -38,6 +40,11 @@ class CartController{
                 const login="Đăng nhập"
                 res.render('cart',{data,path,login})
             }
+        }
+        else
+        {
+            res.redirect('/login')
+        }
             
            
             

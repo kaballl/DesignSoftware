@@ -91,29 +91,40 @@ class SingleProductController{
         }
         add(req,res,next)
         {
-            Product.findOne({_slug:req.params.slug})
-            .then(data=>{
-                data=mongooseToObject(data)
-                if(!req.session.data)
-                {
-                    var temp=[];
-                    temp.push(data)
-                    req.session.data=temp
-                }
-                else{
-                    var temp=[]
-                    temp=req.session.data
-                    temp.push(data)
-                    req.session.data=temp
-                }
+            if(req.session.customer)
+            {
+
+                
+                Product.findOne({_slug:req.params.slug})
+                .then(data=>{
+                    data=mongooseToObject(data)
+                    if(!req.session.data)
+                    {
+                        var temp=[];
+                        temp.push(data)
+                         req.session.data=temp
+                     }
+                    else{
+                        var temp=[]
+                        temp=req.session.data
+                        temp.push(data)
+                         req.session.data=temp
+                    }
                
 
                 
-                var message="Thêm vào giỏ hàng thành công"
-                res.redirect('/cart')
+                    var message="Thêm vào giỏ hàng thành công"
+                     res.redirect('/cart')
 
-            })
-        }
+                 })
+            }
+            else
+            {
+                res.redirect('/login')
+
+
+            }
+    }
        
 
 
