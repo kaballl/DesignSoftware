@@ -21,7 +21,7 @@ class LoginController{
         }
         else
         {
-            const login="Login"
+            const login="Đăng nhập"
             res.render('login',{login})
         }
             
@@ -40,14 +40,14 @@ class LoginController{
             if(customer.length==0)
             {
                 console.log(1);
-                mess="The username or password is incorrect";
-                const login="Login"
+                mess="Sai tên đăng nhập hoặc mật khẩu";
+                const login="Đăng nhập"
                 res.render('login',{mess,login});
             }
             else{ if(customer[0]._lock==true)
             {
-                const login="Login"
-                mess="This account was locked by Admin";
+                const login="Đăng nhập"
+                mess="Tài khoản này đã bị khóa bởi quản trị viên";
                 res.render('login',{mess,login});     
             }
             else

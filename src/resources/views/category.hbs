@@ -4,7 +4,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="breadcrumb_iner">
-                        <h2>product list</h2>
+                        <h2>Cửa hàng</h2>
                     </div>
                 </div>
             </div>
@@ -19,29 +19,15 @@
                 <div class="col-md-4">
                     <div class="product_sidebar">
                         
-                        <div class="single_sedebar">
-                            <div class="select_option">
-                                <div class="select_option_list text-capitalize">{{_cate}} <i class="right fas fa-caret-down"></i> </div>
-                                <div class="select_option_dropdown">
-                                    <p><a href="/product?page=1&cate=all&nsx={{_nsx}}">All</a></p>
-                                    <p><a href="/product?page=1&cate=watch&nsx={{_nsx}}">Watch</a></p>
-                                    <p><a href="/product?page=1&cate=headphone&nsx={{_nsx}}">Headphone</a></p>
-                                    <p><a href="/product?page=1&cate=laptop&nsx={{_nsx}}">Laptop</a></p>
-                                    <p><a href="/product?page=1&cate=mouse&nsx={{_nsx}}">Mouse</a></p>
-                                    <p><a href="/product?page=1&cate=keyboard&nsx={{_nsx}}">Keyboard</a></p>
-                                </div>
-                            </div>
-                        </div>
+                        
                         <div class="single_sedebar">
                             <div class="select_option">
                                 <div class="select_option_list text-capitalize">{{_nsx}} <i class="right fas fa-caret-down"></i> </div>
-                                <div class="select_option_dropdown">
-                                    <p><a href="/product?page=1&cate={{_cate}}&nsx=all">All</a></p>
-                                    <p><a href="/product?page=1&cate={{_cate}}&nsx=apple">Apple</a></p>
-                                    <p><a href="/product?page=1&cate={{_cate}}&nsx=asus">Asus</a></p>
-                                    <p><a href="/product?page=1&cate={{_cate}}&nsx=microsoft">Microsoft</a></p>
-                                    <p><a href="/product?page=1&cate={{_cate}}&nsx=google">Google</a></p>
-                                    <p><a href="/product?page=1&cate={{_cate}}&nsx=samsung">Samsung</a></p>
+                                <div class="select_option_dropdown text-capitalize">
+                                    {{#each procedures}}
+                                    <p><a href="/product?page=1&nsx={{this}}">{{this}}</a></p>
+                                    
+                                    {{/each}}
                                     
                                 </div>
                             </div>
@@ -59,7 +45,7 @@
                                     </a>
                                    
                                     <h3> <a href="singleproduct/{{this._id}}">{{this._nameproduct}}</a> </h3>
-                                    <p>${{this._price}}</p>
+                                    <p>{{this._price}}₫</p>
                                 </div>
                             </div>
                             {{/each}}
@@ -83,7 +69,7 @@
                                             </span>
                                         </li>
                                     {{else}}
-                                        <li class="page-item"><a class="page-link" href="product?page={{value}}&cate={{c}}&nsx={{n}}">{{value}}</a></li>
+                                        <li class="page-item"><a class="page-link" href="product?page={{value}}&nsx={{n}}">{{value}}</a></li>
                                     {{/if}}
                                 {{/each}}
                                 
@@ -101,43 +87,30 @@
     <!-- feature part here -->
     <section class="feature_part section_padding">
         <div class="container">
-            <div class="row justify-content-between">
-                <div class="col-lg-6">
-                    <div class="feature_part_tittle">
-                        <h3>Credibly innovate granular
-                        internal or organic sources
-                        whereas standards.</h3>
-                    </div>
-                </div>
-                <div class="col-lg-5">
-                    <div class="feature_part_content">
-                        <p>Seamlessly empower fully researched growth strategies and interoperable internal or “organic” sources. Credibly innovate granular internal or “organic” sources whereas high standards in web-readiness.</p>
-                    </div>
-                </div>
-            </div>
+            
             <div class="row justify-content-center">
                 <div class="col-lg-3 col-sm-6">
                     <div class="single_feature_part">
                         <img src="img/icon/feature_icon_1.svg" alt="#">
-                        <h4>Credit Card Support</h4>
+                        <h4>Hỗ trợ sử dụng thẻ tín dụng</h4>
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div class="single_feature_part">
                         <img src="img/icon/feature_icon_2.svg" alt="#">
-                        <h4>Online Order</h4>
+                        <h4>Đặt hàng trực tuyến</h4>
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div class="single_feature_part">
                         <img src="img/icon/feature_icon_3.svg" alt="#">
-                        <h4>Free Delivery</h4>
+                        <h4>Miễn phí giao hàng</h4>
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div class="single_feature_part">
                         <img src="img/icon/feature_icon_4.svg" alt="#">
-                        <h4>Product with Gift</h4>
+                        <h4>Tặng quà khi mua hàng</h4>
                     </div>
                 </div>
             </div>

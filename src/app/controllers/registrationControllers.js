@@ -16,15 +16,15 @@ class RegistrationController{
         
         if(req.session.customer)
         {
-            const info="Your Information"
-            const logout="Logout"
-            const change="Change Password"
+            const info="Thông tin cá nhân"
+            const logout="Đăng xuất"
+            const change="Đổi mật khẩu"
             const Active=1
             res.render('registration',{info,logout,change,Active})
         }
         else
         {
-            const login="Login"
+            const login="Đăng nhập"
             res.render('registration',{login})
         }
         
@@ -68,18 +68,18 @@ class RegistrationController{
                 transporter.sendMail(mailOptions,function(err,data){
                     if(err){
                         console.log('error occurs:',err)
-                        message="Your email is invalid"
+                        message="Email bạn điền không tồn tại"
                         if(req.session.customer)
                         {
                             const Active=1
-                            const info="Your information"
-                            const logout="Logout"
-                            const change="Change Password"
+                            const info="Thông tin cá nhân"
+                            const logout="Đăng xuất"
+                            const change="Đổi mật khẩu"
                             res.render('registration',{info,logout,change,message,Active})
                         }
                         else
                         {
-                            const login="Login"
+                            const login="Đăng nhập"
                             res.render('registration',{login,message})
                         }
 
@@ -96,18 +96,18 @@ class RegistrationController{
                         const customer=new Customer(formData)
                         customer.save()
                         .then(()=>{
-                            message="Thank you.Your account has been successfully created.Please check out your email to take the password"
+                            message="Tạo tài khoản thành công.Vui lòng kiểm tra email bạn đăng ký để nhận mật khẩu "
                             if(req.session.customer)
                             {
                                 const Active=1
-                                const info="Your information"
-                                const logout="Logout"
-                                const change="Change Password"
+                                const info="Thông tin cá nhân"
+                                const logout="Đăng xuất"
+                                const change="Đổi mật khẩu"
                                 res.render('registration',{info,logout,change,message,Active})
                             }
                             else
                             {
-                                const login="Login"
+                                const login="Đăng nhập"
                                 res.render('registration',{login,message})
                             }
                             
@@ -122,19 +122,19 @@ class RegistrationController{
 
             }
             else{
-                message="The username or email has already been taken"
+                message="Tên đăng nhập hoặc email đã được sử dụng"
                 if(req.session.customer)
                 {
 
-                    const info="Your information"
-                    const logout="Logout"
-                    const change="Change Password"
+                    const info="Thông tin cá nhân"
+                    const logout="Đăng xuất"
+                    const change="Đổi mật khẩu"
                     const Active=1
                     res.render('registration',{info,logout,change,message,Active})
                 }
                 else
                 {
-                    const login="Login"
+                    const login="Đăng nhập"
                     res.render('registration',{login,message})
                 }
                 

@@ -14,36 +14,38 @@
                         <div class="collapse navbar-collapse main-menu-item" id="navbarSupportedContent">
                             <ul class="navbar-nav">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="/home">Home</a>
+                                    <a class="nav-link" href="/home">Trang chủ</a>
                                 </li>
                                
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" id="navbarDropdown_1"
                                         role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        product
+                                        Sản phẩm
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown_1">
-                                        <a class="dropdown-item" href="/product"> product list</a>
+                                        <a class="dropdown-item" href="/product">Cửa hàng</a>
                                         
                                         
-                                        <a class="dropdown-item" href="/cart">shopping cart</a>
-                                        <a class="dropdown-item" href="/history">order history</a>
+                                        <a class="dropdown-item" href="/cart">Giỏ hàng</a>
+                                        <a class="dropdown-item" href="/history">Lịch sử mua hàng</a>
                                         
                                     </div>
                                 </li>
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle"  id="navbarDropdown_3"
                                         role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        pages
+                                        Tài khoản
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown_2">
-                                        <a class="dropdown-item" href="/login">login </a>
-                                        <a class="dropdown-item" href="/registration">registration</a>
+                                       
+                                      
                                         {{#if Active}}
                                         <a class="dropdown-item" href="/info">{{info}}</a>
-                                       <a class="dropdown-item" href="/changepassword">{{change}}</a>
+                                        <a class="dropdown-item" href="/changepassword">{{change}}</a>
                                         <a class="dropdown-item" href="/logout">{{logout}}</a>
                                         {{else}}
+                                        <a class="dropdown-item" href="/login">Đăng nhập </a>
+                                        <a class="dropdown-item" href="/registration">Đăng kí</a>
                                         {{/if}}
                                        
                                         

@@ -17,14 +17,14 @@ class ForgetPasswordController{
         if(req.session.customer)
         {
             const Active=1
-            const info="Your information"
-            const logout="Logout"
-            const change="Change Password"
+            const info="Thông tin cá nhân"
+            const logout="Đăng xuất"
+            const change="Đổi mật khẩu"
             res.render('forgetpassword',{info,logout,change,Active})
         }
         else
         {
-            const login="Login"
+            const login="Đăng nhập"
             res.render('forgetpassword',{login})
         }
         
@@ -70,18 +70,18 @@ class ForgetPasswordController{
                 transporter.sendMail(mailOptions,function(err,data){
                     if(err){
                         console.log('error occurs:',err)
-                        message="Email is invalid"
+                        message="Email của bạn không tồn tại"
                         if(req.session.customer)
                         {
                             const Active=1
-                            const info="Your information"
-                            const logout="Logout"
-                            const change="Change Password"
+                            const info="Thông tin cá nhân"
+                            const logout="Đăng xuất"
+                            const change="Đổi mật khẩu"
                             res.render('forgetpassword',{info,logout,change,message,Active})
                         }
                         else
                         {
-                            const login="Login"
+                            const login="Đăng nhập"
                             res.render('forgetpassword',{login,message})
                         }
                         
@@ -93,18 +93,18 @@ class ForgetPasswordController{
                         
                         Customer.findByIdAndUpdate(Object._id,{_password:randomstring})
                         .then(()=>{
-                            message="We have sent you a message in your email "+Object._email+" with a random password.Please Sign in your email and take it" 
+                            message="Chúng tôi đã gửi một mật khẩu ngẫu nhiên đến email "+Object._email+".Vui lòng kiểm tra email của bạn" 
                             if(req.session.customer)
                             {
                                 const Active=1
-                                const info="Your information"
-                                const logout="Logout"
-                                const change="Change Password"
+                                const info="Thông tin cá nhân"
+                                const logout="Đăng xuất"
+                                const change="Đổi mật khẩu"
                                 res.render('forgetpassword',{info,logout,change,message,Active})
                             }
                             else
                             {
-                                const login="Login"
+                                const login="Đăng nhập"
                                 res.render('forgetpassword',{login,message})
                             }
                             
@@ -119,18 +119,18 @@ class ForgetPasswordController{
 
             }
             else{
-                message="The Username is invalid"
+                message="Tên đăng nhập không tồn tại"
                 if(req.session.customer)
                 {
                     const Active=1
-                    const info="Your information"
-                    const logout="Logout"
-                    const change="Change Password"
+                    const info="Thông tin cá nhân"
+                    const logout="Đăng xuất"
+                    const change="Đổi mật khẩu"
                     res.render('forgetpassword',{info,logout,change,message,Active})
                 }
                 else
                 {
-                    const login="Login"
+                    const login="Đăng nhập"
                     res.render('forgetpassword',{login,message})
                 }
                 

@@ -37,9 +37,9 @@ class ConfirmationController{
                             if(i==data.length-1)
                             {
                                 const Active=1
-                                const info="Your Information"
-                                const logout="Logout"
-                                const change="Change Password"
+                                const info="Thông tin cá nhân"
+                                const logout="Đăng xuất"
+                                const change="Đổi mật khẩu"
                                 res.render('confirmation',{info,logout,change,result,Active})
                                 
                             }

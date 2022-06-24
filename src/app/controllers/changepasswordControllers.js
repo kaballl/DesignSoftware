@@ -16,9 +16,9 @@ class ChangePassWordController{
             if(req.session.customer)
             {
                 const Active=1
-                const info="Your Information"
-                const logout="Logout"
-                const change="Change Password"
+                const info="Thông tin cá nhân"
+                const logout="Đăng xuất"
+                const change="Đổi mật khẩu"
                 res.render('changepassword',{customer:req.session.customer,info,logout,change,Active})
             }
             
@@ -34,10 +34,10 @@ class ChangePassWordController{
     {
         if(req.body.password!=req.session.customer._password){
             const Active=1
-            const info="Your Information"
-            const logout="Logout"
-            const change="Change Password"
-            var message="The current password is incorrect"
+            const info="Thông tin cá nhân"
+            const logout="Đăng xuất"
+            const change="Đổi mật khẩu"
+            var message="Mật khẩu hiện tại không chính xác"
             res.render('changepassword',{customer:req.session.customer,info,logout,message,change,Active})
 
         }
@@ -45,21 +45,21 @@ class ChangePassWordController{
 
         {
             const Active=1
-            const info="Your Information"
-            const logout="Logout"
-            const change="Change Password"
-             var message="The repeat password is not the same as the new password"
+            const info="Thông tin cá nhân"
+            const logout="Đăng xuất"
+            const change="Đổi mật khẩu"
+             var message="Mật khẩu mới phải trùng với mật khẩu xác nhận"
             res.render('changepassword',{customer:req.session.customer,info,logout,message,change,Active})
 
         }
         else
         {
             req.session.customer._password=req.body.newpassword
-            var message="Your password has been changed successfully "
+            var message="Đổi mật khẩu thành công "
             const Active=1
-            const info="Your Information"
-            const logout="Logout"
-            const change="Change Password"
+            const info="Thông tin cá nhân"
+            const logout="Đăng xuất"
+            const change="Đổi mật khẩu"
              Customer.findByIdAndUpdate( req.session.customer._id ,{_password:req.session.customer._password})
             .then(() => res.render('changepassword',{customer:req.session.customer,info,logout,message,change,Active}))
             .catch(next);

@@ -17,9 +17,9 @@ class CheckOutController{
             if(req.session.customer)
             {
                 const Active=1
-                const info="Your Information"
-                const logout="Logout"
-                const change="Change Password"
+                const info="Thông tin cá nhân"
+                const logout="Đăng xuất"
+                const change="Đổi mật khẩu"
                 var data=req.session.data
                 var result=[]
                 var sum=0
@@ -55,11 +55,11 @@ class CheckOutController{
     {
         if(req.body.address==""||req.body.number=="")
         {
-            var message="You must complete the delivery information(Address,Number)"
+            var message="Bạn phải điền thông tin giao hàng"
             const Active=1
-            const info="Your information"
-            const logout="Logout"
-            const change="Change Password"
+            const info="Thông tin cá nhân"
+            const logout="Đăng xuất"
+            const change="Đổi mật khẩu"
             var data=req.session.data
                 var result=[]
                 var sum=0
@@ -101,11 +101,11 @@ class CheckOutController{
     
             orderData.save()
             .then(()=>{
-                var message="Thank you. Your order has been received."
+                var message="Cảm ơn bạn.Đơn hàng của bạn đã được xác nhận."
                 const Active=1
-                const info="Your information"
-                const logout="Logout"
-                const change="Change Password"
+                const info="Thông tin cá nhân"
+                const logout="Đăng xuất"
+                const change="Đổi mật khẩu"
                 
                 data=[]
                 data=req.session.data

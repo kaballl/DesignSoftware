@@ -33,15 +33,15 @@ class SingleProductController{
                                     if(req.session.customer)
                                     {
 
-                                        const info="Your Information"
-                                        const logout="Logout"
-                                        const change="Change Password"
+                                        const info="Thông tin cá nhân"
+                                        const logout="Đăng xuất"
+                                        const change="Đổi mật khẩu"
                                         const Active=1
                                         res.render('singleproduct/singleproduct',{change,Active,info,logout,comments,data:mongooseToObject (data)})
                                     }
                                     else
                                     {
-                                        const login="Login"
+                                        const login="Đăng nhập"
                                         res.render('singleproduct/singleproduct',{login,comments,data:mongooseToObject (data)})
                                     }
                                     
