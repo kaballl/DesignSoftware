@@ -16,7 +16,7 @@ class CheckOutController{
 
             if(req.session.customer)
             {
-                const Active=TRUE
+                const Active=1
                 const info="Your Information"
                 const logout="Logout"
                 const change="Change Password"
@@ -40,7 +40,7 @@ class CheckOutController{
                     result.push(item)
                 }
                 req.session.sum=sum
-                res.render('checkout',{info,logout,change,result,sum})
+                res.render('checkout',{info,logout,change,result,sum,Active})
             }
             else{
                 res.redirect('/login')
@@ -56,7 +56,7 @@ class CheckOutController{
         if(req.body.address==""||req.body.number=="")
         {
             var message="You must complete the delivery information(Address,Number)"
-            const Active=TRUE
+            const Active=1
             const info="Your information"
             const logout="Logout"
             const change="Change Password"
@@ -81,7 +81,7 @@ class CheckOutController{
                 }
                 req.session.sum=sum
             
-            res.render('checkout',{info,logout,change,message,result,sum})
+            res.render('checkout',{info,logout,change,message,result,sum,Active})
         }
         else
         {
@@ -102,7 +102,7 @@ class CheckOutController{
             orderData.save()
             .then(()=>{
                 var message="Thank you. Your order has been received."
-                const Active=TRUE
+                const Active=1
                 const info="Your information"
                 const logout="Logout"
                 const change="Change Password"
@@ -120,7 +120,7 @@ class CheckOutController{
                     orderDetail.save()
                 }
                 req.session.data=[]
-                res.render('checkout',{info,logout,change,message})
+                res.render('checkout',{info,logout,change,message,Active})
             })
         }
 

@@ -36,8 +36,8 @@ class SingleProductController{
                                         const info="Your Information"
                                         const logout="Logout"
                                         const change="Change Password"
-                                        const Active=TRUE
-                                        res.render('singleproduct/singleproduct',{change,info,logout,comments,data:mongooseToObject (data)})
+                                        const Active=1
+                                        res.render('singleproduct/singleproduct',{change,Active,info,logout,comments,data:mongooseToObject (data)})
                                     }
                                     else
                                     {

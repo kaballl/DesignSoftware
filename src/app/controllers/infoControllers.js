@@ -15,11 +15,11 @@ class InfoController{
         {
             if(req.session.customer)
             {
-                const Active=TRUE
+                const Active=1
                 const info="Your Information"
                 const logout="Logout"
                 const change="Change Password"
-                res.render('info',{customer:req.session.customer,info,logout,change})
+                res.render('info',{customer:req.session.customer,info,logout,change,Active})
             }
             
            

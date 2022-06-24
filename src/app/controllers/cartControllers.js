@@ -28,11 +28,11 @@ class CartController{
             }
             if(req.session.customer)
             {
-                const Active=TRUE
+                const Active=1
                 const info="Your Information"
                 const logout="Logout"
                 const change="Change Password"
-                res.render('cart',{data,path,info,logout,change})
+                res.render('cart',{data,path,info,logout,change,Active})
             }
             else{
                 const login="Login"

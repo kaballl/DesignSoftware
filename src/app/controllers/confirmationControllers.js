@@ -36,11 +36,11 @@ class ConfirmationController{
                             result.push(item)
                             if(i==data.length-1)
                             {
-                                const Active=TRUE
+                                const Active=1
                                 const info="Your Information"
                                 const logout="Logout"
                                 const change="Change Password"
-                                res.render('confirmation',{info,logout,change,result})
+                                res.render('confirmation',{info,logout,change,result,Active})
                                 
                             }
 

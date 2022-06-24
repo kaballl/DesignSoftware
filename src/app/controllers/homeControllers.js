@@ -20,13 +20,14 @@ class HomeController{
             
                   if(req.session.customer)
                   {
-                    const Active=TRUE
+                    const Active=1
                       const info="Your Information"
                       const logout="Logout"
                       const change="Change Password"
                       res.render('home',{products,info,logout,change,Active})
                   }
                   else{
+                    
 
                     const login="Login"
                     res.render('home',{products,login})

@@ -16,11 +16,11 @@ class ForgetPasswordController{
         
         if(req.session.customer)
         {
-            const Active=TRUE
+            const Active=1
             const info="Your information"
             const logout="Logout"
             const change="Change Password"
-            res.render('forgetpassword',{info,logout,change})
+            res.render('forgetpassword',{info,logout,change,Active})
         }
         else
         {
@@ -71,11 +71,11 @@ class ForgetPasswordController{
                         message="Email is invalid"
                         if(req.session.customer)
                         {
-                            const Active=TRUE
+                            const Active=1
                             const info="Your information"
                             const logout="Logout"
                             const change="Change Password"
-                            res.render('forgetpassword',{info,logout,change,message})
+                            res.render('forgetpassword',{info,logout,change,message,Active})
                         }
                         else
                         {
@@ -94,11 +94,11 @@ class ForgetPasswordController{
                             message="We have sent you a message in your email "+Object._email+" with a random password.Please Sign in your email and take it" 
                             if(req.session.customer)
                             {
-                                const Active=TRUE
+                                const Active=1
                                 const info="Your information"
                                 const logout="Logout"
                                 const change="Change Password"
-                                res.render('forgetpassword',{info,logout,change,message})
+                                res.render('forgetpassword',{info,logout,change,message,Active})
                             }
                             else
                             {
@@ -120,10 +120,11 @@ class ForgetPasswordController{
                 message="The Username is invalid"
                 if(req.session.customer)
                 {
+                    const Active=1
                     const info="Your information"
                     const logout="Logout"
                     const change="Change Password"
-                    res.render('forgetpassword',{info,logout,change,message})
+                    res.render('forgetpassword',{info,logout,change,message,Active})
                 }
                 else
                 {

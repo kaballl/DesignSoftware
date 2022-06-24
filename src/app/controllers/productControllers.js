@@ -46,10 +46,11 @@ class ProductController{
                     }
                     if(req.session.customer)
                     {
+                        const Active=1
                         const info="Your Information"
                         const logout="Logout"
                         const change="Change Password"
-                        res.render('category',{info,logout,products,tongsoPage,page_items,_cate,_nsx,change})
+                        res.render('category',{info,logout,products,tongsoPage,page_items,_cate,_nsx,change,Active})
                     }
                     else
                     {
@@ -96,10 +97,11 @@ class ProductController{
                     } 
                     if(req.session.customer)
                     {
+                        const Active=1
                         const info="Your Information"
                         const logout="Logout"
                         const change="Change Password"
-                        res.render('category',{info,logout,products,tongsoPage,page_items,_cate,_nsx,change})
+                        res.render('category',{info,logout,products,tongsoPage,page_items,_cate,_nsx,change,Active})
                     }
                     else
                     {
@@ -144,11 +146,11 @@ class ProductController{
                     } 
                     if(req.session.customer)
                     {
-                        const Active=TRUE
+                        const Active=1
                         const info="Your Information"
                         const logout="Logout"
                         const change="Change Password"
-                        res.render('category',{info,logout,products,tongsoPage,page_items,_cate,_nsx,change})
+                        res.render('category',{info,logout,products,tongsoPage,page_items,_cate,_nsx,change,Active})
                     }
                     else
                     {
@@ -193,11 +195,11 @@ class ProductController{
                     } 
                     if(req.session.customer)
                     {
-                        const Active=TRUE
+                        const Active=1
                         const info="Your Information"
                         const logout="Logout"
                         const change="Change Password"
-                        res.render('category',{info,logout,products,tongsoPage,page_items,_cate,_nsx,change})
+                        res.render('category',{info,logout,products,tongsoPage,page_items,_cate,_nsx,change,Active})
                     }
                     else
                     {

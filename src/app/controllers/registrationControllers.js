@@ -19,8 +19,8 @@ class RegistrationController{
             const info="Your Information"
             const logout="Logout"
             const change="Change Password"
-            const Active=TRUE
-            res.render('registration',{info,logout,change})
+            const Active=1
+            res.render('registration',{info,logout,change,Active})
         }
         else
         {
@@ -52,15 +52,17 @@ class RegistrationController{
                 let transporter=nodemailer.createTransport({
                     service:'gmail',
                     auth:{
-                        user:'ptudwshop20212022@gmail.com',
-                        pass:'Leminhduc0505@'
-                    }
+                        user:'leminhduc050501@gmail.com',
+                        pass:'cyggtiusfzavsmxa'
+                    },
+                    port: 465,
+                    host: 'smtp.gmail.com'
                 })
         
                 let mailOptions={
-                    from:'ptudwshop20212022@gmail.com',
+                    from:'leminhduc050501@gmail.com',
                     to:req.body._email,
-                    subject:'PTUDWShop',
+                    subject:'DesignSoftware',
                     text:'Your password is '+ randomstring
                 }
                 transporter.sendMail(mailOptions,function(err,data){
@@ -69,11 +71,11 @@ class RegistrationController{
                         message="Your email is invalid"
                         if(req.session.customer)
                         {
-                            const Active=TRUE
+                            const Active=1
                             const info="Your information"
                             const logout="Logout"
                             const change="Change Password"
-                            res.render('registration',{info,logout,change,message})
+                            res.render('registration',{info,logout,change,message,Active})
                         }
                         else
                         {
@@ -97,11 +99,11 @@ class RegistrationController{
                             message="Thank you.Your account has been successfully created.Please check out your email to take the password"
                             if(req.session.customer)
                             {
-                                const Active=TRUE
+                                const Active=1
                                 const info="Your information"
                                 const logout="Logout"
                                 const change="Change Password"
-                                res.render('registration',{info,logout,change,message})
+                                res.render('registration',{info,logout,change,message,Active})
                             }
                             else
                             {
@@ -123,10 +125,12 @@ class RegistrationController{
                 message="The username or email has already been taken"
                 if(req.session.customer)
                 {
+
                     const info="Your information"
                     const logout="Logout"
                     const change="Change Password"
-                    res.render('registration',{info,logout,change,message})
+                    const Active=1
+                    res.render('registration',{info,logout,change,message,Active})
                 }
                 else
                 {
