@@ -32,10 +32,10 @@ class InfoController{
     }
     check(req,res,next)
     {
-        req.session.customer._name=req.body._name
-        req.session.customer._email=req.body._email
-        req.session.customer._address=req.body._address
-        req.session.customer._avatar=req.body._avatar
+        req.session.customer.name=req.body.name
+        req.session.customer.email=req.body.email
+        req.session.customer.address=req.body.address
+        req.session.customer.avatar=req.body.avatar
             Customer.updateOne({ _id: req.session.customer._id }, req.body)
             .then(() => res.redirect('info'))
             .catch(next);

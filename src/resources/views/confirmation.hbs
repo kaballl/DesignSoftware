@@ -33,16 +33,16 @@
             <h4>thông tin đơn hàng</h4>
             <ul>
               <li>
-                <p>số điện thoại</p><span>: {{this.order._phonenumber}}</span>
+                <p>số điện thoại</p><span>: {{this.order.phonenumber}}</span>
               </li>
               <li>
-                <p>ngày đặt hàng</p><span>: {{this.order._book}}</span>
+                <p>ngày đặt hàng</p><span>: {{this.order.book}}</span>
               </li>
               <li>
-                <p>tổng tiền</p><span>: VNĐ {{this.order._total}}</span>
+                <p>tổng tiền</p><span>: VNĐ {{this.order.total}}</span>
               </li>
               <li>
-                <p>trạng thái đơn hàng</p><span>: {{this.order._status}}</span>
+                <p>trạng thái đơn hàng</p><span>: {{this.order.status}}</span>
               </li>
             </ul>
           </div>
@@ -53,10 +53,10 @@
             <h4>thông tin địa chỉ giao hàng</h4>
             <ul>
               <li>
-                <p>địa chỉ giao hàng</p><span>: {{this.order._address}}</span>
+                <p>địa chỉ giao hàng</p><span>: {{this.order.address}}</span>
               </li>
               <li>
-                <p>ghi chú khi nhận hàng</p><span>: {{this.order._note}}</span>
+                <p>ghi chú khi nhận hàng</p><span>: {{this.order.note}}</span>
               </li>
               
             </ul>
@@ -78,16 +78,16 @@
               <tbody>
                 {{#each this.datas}}
                 <tr>
-                  <th colspan="2"><span>{{this._nameproduct}}</span></th>
-                  <th>x0{{this._amount}}</th>
-                  <th> <span>{{this._total}}₫</span></th>
+                  <th colspan="2"><span>{{this.nameproduct}}</span></th>
+                  <th>x0{{this.amount}}</th>
+                  <th> <span>{{this.total}}₫</span></th>
                 </tr>
                 {{/each}}
                
                 
                 <tr>
                   <th colspan="3">Tổng tiền đơn hàng</th>
-                  <th> <span>{{this.order._total}}₫</span></th>
+                  <th> <span>{{this.order.total}}₫</span></th>
                 </tr>
                 
               </tbody>

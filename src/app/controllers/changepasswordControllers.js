@@ -32,7 +32,7 @@ class ChangePassWordController{
     }
     check(req,res,next)
     {
-        if(req.body.password!=req.session.customer._password){
+        if(req.body.password!=req.session.customer.password){
             const Active=1
             const info="Thông tin cá nhân"
             const logout="Đăng xuất"
@@ -54,13 +54,13 @@ class ChangePassWordController{
         }
         else
         {
-            req.session.customer._password=req.body.newpassword
+            req.session.customer.password=req.body.newpassword
             var message="Đổi mật khẩu thành công "
             const Active=1
             const info="Thông tin cá nhân"
             const logout="Đăng xuất"
             const change="Đổi mật khẩu"
-             Customer.findByIdAndUpdate( req.session.customer._id ,{_password:req.session.customer._password})
+             Customer.findByIdAndUpdate( req.session.customer._id ,{password:req.session.customer.password})
             .then(() => res.render('changepassword',{customer:req.session.customer,info,logout,message,change,Active}))
             .catch(next);
         }

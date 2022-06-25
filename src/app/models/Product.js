@@ -5,17 +5,17 @@ const ObjectId = Schema.ObjectId;
 const Product = new Schema({
 
   _id:{type:String},
-  _nameproduct:{type:String},
+  name:{type:String},
  
-  _img:{type:String},
-  _slug:{type:String},
-  _amount:{type:Number},
-  _price:{type:Number},
-  _detail:{type:String},
+  image:{type:String},
+  slug:{type:String},
+  amount:{type:Number},
+  price:{type:Number},
+  detail:{type:String},
   
-  _procedure:{type:String},
-  _lock:{type:Boolean},
-  _trend:{type:Boolean},
+  origin:{type:String},
+  lock:{type:Boolean},
+  trend:{type:Boolean},
   
 
 

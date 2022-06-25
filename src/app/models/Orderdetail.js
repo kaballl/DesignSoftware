@@ -6,11 +6,11 @@ const Orderdetail = new Schema({
 
   
   
-    _idorder: { type: String,require:true},
-    _idproduct: { type: String,require:true},
-    _nameproduct:{type:String},
-    _amount:{ type: Number, default: 0 },
-    _total:{type:Number}
+    idorder: { type: String,require:true},
+    idproduct: { type: String,require:true},
+    nameproduct:{type:String},
+    amount:{ type: Number, default: 0 },
+    total:{type:Number}
   
 
 

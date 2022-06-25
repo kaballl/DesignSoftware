@@ -32,7 +32,7 @@ class LoginController{
     check(req,res,next)
     {
         console.log(req.body);
-        Customer.find({_username:req.body.username,_password:req.body.password})
+        Customer.find({username:req.body.username,password:req.body.password})
         .lean()
         .then((customer)=>{
             var mess;

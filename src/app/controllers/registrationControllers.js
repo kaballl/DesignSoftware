@@ -39,7 +39,7 @@ class RegistrationController{
         .skip()
         .lean()
         .then(datas=>{
-            if(check(datas,req.body._username,req.body._email))
+            if(check(datas,req.body.username,req.body.email))
             {
                 var chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
                 var string_length = 6;
@@ -61,7 +61,7 @@ class RegistrationController{
         
                 let mailOptions={
                     from:'leminhduc050501@gmail.com',
-                    to:req.body._email,
+                    to:req.body.email,
                     subject:'DesignSoftware',
                     text:'Your password is '+ randomstring
                 }
@@ -89,10 +89,10 @@ class RegistrationController{
                     else{
                         console.log('email sent')
                         const formData=req.body
-                        formData._address=''
-                        formData._password=randomstring
-                        formData._avatar='https://scr.vn/wp-content/uploads/2020/07/avt-cute.jpg.webp'
-                        formData._lock=false
+                        formData.address=''
+                        formData.password=randomstring
+                        formData.avatar='https://scr.vn/wp-content/uploads/2020/07/avt-cute.jpg.webp'
+                        formData.lock=false
                         const customer=new Customer(formData)
                         customer.save()
                         .then(()=>{

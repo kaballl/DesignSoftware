@@ -17,14 +17,14 @@ class ConfirmationController{
             if(req.session.customer)
             {
                 var result=[]
-                Order.find({_iduser:req.session.customer._id})
+                Order.find({id_customer:req.session.customer._id})
                 .limit()
                 .skip()
                 .lean()
                 .then(data=>{
                     for(let i=0;i<data.length;i++)
                     {
-                        Orderdetail.find({_idorder:data[i]._id})
+                        Orderdetail.find({idorder:data[i]._id})
                         .limit()
                         .skip()
                         .lean()

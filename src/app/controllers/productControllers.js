@@ -42,9 +42,9 @@ class ProductController{
                         procedures.push("all")
                         for(let i=0;i<p.length;i++)
                         {
-                            if(notExistProcedure(p[i]._procedure,procedures))
+                            if(notExistProcedure(p[i].origin,procedures))
                             {
-                                procedures.push(p[i]._procedure)
+                                procedures.push(p[i].origin)
                             }
 
                         }
@@ -98,13 +98,13 @@ class ProductController{
             var skipAmount=(page-1)*PAGE_SIZE
             
             
-            Product.find({_procedure:_nsx})
+            Product.find({origin:_nsx})
             .skip(skipAmount)
             .limit(PAGE_SIZE)
             .lean()
             .then(products=>{
                 
-                Product.countDocuments({_procedure:_nsx}).then((total)=>{
+                Product.countDocuments({origin:_nsx}).then((total)=>{
                     Product.find({})
                     .skip()
                     .limit()
@@ -115,9 +115,9 @@ class ProductController{
                         procedures.push("all")
                         for(let i=0;i<p.length;i++)
                         {
-                            if(notExistProcedure(p[i]._procedure,procedures))
+                            if(notExistProcedure(p[i].origin,procedures))
                             {
-                                procedures.push(p[i]._procedure)
+                                procedures.push(p[i].origin)
                             }
 
                         }

@@ -40,12 +40,12 @@
                             {{#each products}}
                             <div class="col-lg-6 col-sm-6">
                                 <div class="single_product_item">
-                                    <a href="singleproduct/{{this._slug}}">
-                                        <img src="{{this._img}}" alt="#" class="img-fluid">
+                                    <a href="singleproduct/{{this.slug}}">
+                                        <img src="{{this.image}}" alt="#" class="img-fluid">
                                     </a>
                                    
-                                    <h3> <a href="singleproduct/{{this._id}}">{{this._nameproduct}}</a> </h3>
-                                    <p>{{this._price}}₫</p>
+                                    <h3> <a href="singleproduct/{{this.slug}}">{{this.name}}</a> </h3>
+                                    <p>{{this.price}}₫</p>
                                 </div>
                             </div>
                             {{/each}}

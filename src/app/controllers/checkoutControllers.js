@@ -28,9 +28,9 @@ class CheckOutController{
                 {
                     const number1=1
                     const item={
-                        name:data[i]._nameproduct,
+                        name:data[i].name,
                         number:number1,
-                        total:number1*parseInt(data[i]._price)
+                        total:number1*parseInt(data[i].price)
                         
                         
 
@@ -68,9 +68,9 @@ class CheckOutController{
                 {
                     const number1=1
                     const item={
-                        name:data[i]._nameproduct,
+                        name:data[i].name,
                         number:number1,
-                        total:number1*parseInt(data[i]._price)
+                        total:number1*parseInt(data[i].price)
                         
                         
 
@@ -90,14 +90,14 @@ class CheckOutController{
             req.session.number=req.body.number
             req.session.node=req.body.message
             const orderData=new Order()
-            orderData._iduser=req.session.customer._id
-            orderData._status="not"
-            orderData._address=req.body.address
-            orderData._phonenumber=req.body.number
-            orderData._note=req.body.message
-            orderData._total=req.session.sum
-            orderData._book=today
-            orderData._delivery=today
+            orderData.id_customer=req.session.customer._id
+            orderData.status="not"
+            orderData.address=req.body.address
+            orderData.phonenumber=req.body.number
+            orderData.note=req.body.message
+            orderData.total=req.session.sum
+            orderData.book=today
+            orderData.delivery=today
     
             orderData.save()
             .then(()=>{
@@ -112,11 +112,11 @@ class CheckOutController{
                 for(let i=0;i<data.length;i++)
                 {
                     var orderDetail=new Orderdetail()
-                    orderDetail._idorder=orderData._id
-                    orderDetail._idproduct=data[i]._id
-                    orderDetail._nameproduct=data[i]._nameproduct
-                    orderDetail._amount=1
-                    orderDetail._total=orderDetail._amount*parseInt(data[i]._price)
+                    orderDetail.idorder=orderData._id
+                    orderDetail.idproduct=data[i]._id
+                    orderDetail.nameproduct=data[i].name
+                    orderDetail.amount=1
+                    orderDetail.total=orderDetail.amount*parseInt(data[i].price)
                     orderDetail.save()
                 }
                 req.session.data=[]

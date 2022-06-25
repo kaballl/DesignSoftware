@@ -12,7 +12,7 @@ class HomeController{
  
     index(req,res,next)
         {
-          Product.find({_trend:true})
+          Product.find({trend:true})
           .skip()
           .limit(6)
           .lean()

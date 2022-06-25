@@ -6,15 +6,15 @@ const Order = new Schema({
 
   
   
-  _iduser: { type: String,require:true},
-  _status:{ type: String,require:true},
-  _book:{type:Date},
-  _delivery:{type:Date},
+  id_customer: { type: String,require:true},
+  status:{ type: String,require:true},
+  book:{type:Date},
+  delivery:{type:Date},
 
-  _address:{type:String},
-  _phonenumber:{type:String},
-  _note:{type:String},
-  _total:{type:String}
+  address:{type:String},
+  phonenumber:{type:String},
+  note:{type:String},
+  total:{type:String}
 
   
 

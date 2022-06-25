@@ -98,7 +98,7 @@ module.exports={
         {
         
 
-            if(datas[i]._username==username||datas[i]._email==email)
+            if(datas[i].username==username||datas[i].email==email)
             {
                 return false
             }
@@ -125,7 +125,7 @@ module.exports={
         {
         
 
-            if(datas[i]._username==username)
+            if(datas[i].username==username)
             {
                 return true
             }
@@ -139,7 +139,7 @@ module.exports={
     {
         for(let i=0;i<datas.length;i++)
         {
-            if(datas[i]._username==username)
+            if(datas[i].username==username)
             {
                 return datas[i]
             }

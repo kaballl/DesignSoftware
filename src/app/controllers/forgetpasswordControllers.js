@@ -63,7 +63,7 @@ class ForgetPasswordController{
         
                 let mailOptions={
                    from:'leminhduc050501@gmail.com',
-                   to:Object._email,
+                   to:Object.email,
                     subject:'DesignSoftware',
                     text:'Your password is '+ randomstring
                 }
@@ -91,9 +91,9 @@ class ForgetPasswordController{
                     else{
                         
                         
-                        Customer.findByIdAndUpdate(Object._id,{_password:randomstring})
+                        Customer.findByIdAndUpdate(Object._id,{password:randomstring})
                         .then(()=>{
-                            message="Chúng tôi đã gửi một mật khẩu ngẫu nhiên đến email "+Object._email+".Vui lòng kiểm tra email của bạn" 
+                            message="Chúng tôi đã gửi một mật khẩu ngẫu nhiên đến email "+Object.email+".Vui lòng kiểm tra email của bạn" 
                             if(req.session.customer)
                             {
                                 const Active=1

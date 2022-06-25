@@ -27,22 +27,22 @@
                 <form class="row contact_form" method="post" id="contactForm" novalidate="novalidate">
 									<div class="col-md-12">
 										<div class="form-group">
-											<input type="text" class="form-control" id="name" name="_name"  value="{{customer._name}}" ></input>
+											<input type="text" class="form-control" id="name" name="name"  value="{{customer.name}}" ></input>
 										</div>
 									</div>
                   <div class="col-md-12">
 										<div class="form-group">
-											<textarea type="text" class="form-control" id="gmail" name="_address" >{{customer._address}}</textarea>
+											<textarea type="text" class="form-control" id="gmail" name="address" >{{customer.address}}</textarea>
 										</div>
 									</div>
                   <div class="col-md-12">
 										<div class="form-group">
-											<input type="text" class="form-control" id="username" name="_avatar" value={{customer._avatar}}>
+											<input type="text" class="form-control" id="username" name="avatar" value={{customer.avatar}}>
 										</div>
 									</div>
                   <div class="col-md-12">
 										<div class="form-group">
-											<input type="text" class="form-control" id="username" name="_email" value={{customer._email}}>
+											<input type="text" class="form-control" id="username" name="email" value={{customer.email}}>
 										</div>
 									</div>
 									
@@ -56,7 +56,7 @@
               </div>
               <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
 
-                <img src="{{customer._avatar}}" class="img-fluid" alt="Sample image">
+                <img src="{{customer.avatar}}" class="img-fluid" alt="Sample image">
 
               </div>
             </div>

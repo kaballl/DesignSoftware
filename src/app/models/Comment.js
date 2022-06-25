@@ -6,9 +6,10 @@ const Comment = new Schema({
 
   
   
-  _nameuser:{type:String},
-  _idproduct:{type:String},
-  _message:{type:String}
+  nameuser:{type:String},
+  lock:{type:Boolean},
+  id_product:{type:String},
+  message:{type:String}
   
 
 

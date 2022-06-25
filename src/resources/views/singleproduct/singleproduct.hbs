@@ -18,27 +18,27 @@
         <div class="col-lg-12">
           <div class="product_img_slide owl-carousel">
             <div class="single_product_img">
-              <img src="{{data._img}}" alt="#" class="img-fluid">
+              <img src="{{data.image}}" alt="#" class="img-fluid">
             </div>
             <div class="single_product_img">
-              <img src="{{data._img}}" alt="#" class="img-fluid">
+              <img src="{{data.image}}" alt="#" class="img-fluid">
             </div>
             <div class="single_product_img">
-              <img src="{{data._img}}" alt="#" class="img-fluid">
+              <img src="{{data.image}}" alt="#" class="img-fluid">
             </div>
           </div>
         </div>
         <div class="col-lg-8">
           <div class="single_product_text text-center">
-            <h3>{{data._nameproduct}} <br>
+            <h3>{{data.name}} <br>
                 </h3>
             <p>
-                {{data._detail}}
+                {{data.detail}}
             </p>
             <div class="card_area">
                 <div class="product_count_area">
                     
-                    <p>{{data._price}}₫</p>
+                    <p>{{data.price}}₫</p>
                 </div>
               <div class="add_to_cart">
                   <a href="/singleproduct/{{data._id}}/add" class="btn_3">thêm vào giỏ hàng</a>
@@ -61,8 +61,8 @@
                             <div class="client_img">
                                 <img src="/img/client.png" alt="#">
                             </div>
-                            <p>"{{this._message}}.</p>
-                            <h5>- {{this._nameuser}}</h5>
+                            <p>"{{this.message}}.</p>
+                            <h5>- {{this.nameuser}}</h5>
                         </div>
                         {{/each}}
                         
@@ -95,17 +95,17 @@
 						<div class="col-lg-8">
 							<div class="review_box">
 								<h4>Review về sản phẩm</h4>
-								<form class="row contact_form" action="/singleproduct/{{data._slug}}/store" method="post" id="contactForm" novalidate="novalidate">
+								<form class="row contact_form" action="/singleproduct/{{data.slug}}/store" method="post" id="contactForm" novalidate="novalidate">
 									<div class="col-md-12">
 										<div class="form-group">
-											<input type="text" class="form-control" id="nameuser" name="_nameuser" placeholder="Tên của bạn">
+											<input type="text" class="form-control" id="nameuser" name="nameuser" placeholder="Tên của bạn">
 										</div>
 									</div>
 									
 									
 									<div class="col-md-12">
 										<div class="form-group">
-											<textarea type="text" class="form-control" name="_message" id="message" rows="1" placeholder="Lời nhận xét của bạn về sản phẩm"></textarea>
+											<textarea type="text" class="form-control" name="message" id="message" rows="1" placeholder="Lời nhận xét của bạn về sản phẩm"></textarea>
 										</div>
 									</div>
 									<div class="col-md-12 text-center">

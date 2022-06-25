@@ -15,7 +15,7 @@ class SingleProductController{
     index(req,res,next)
         {
             
-            Product.findOne({_slug:req.params.slug})
+            Product.findOne({slug:req.params.slug})
             
             
             
@@ -24,7 +24,7 @@ class SingleProductController{
                 
             
             
-                             Comment.find({_idproduct:data._id})
+                             Comment.find({idproduct:data.id})
                             .skip()
                             .limit()
                             .lean()
@@ -76,9 +76,12 @@ class SingleProductController{
         }
         store(req,res,next)
         {
-            const formData=req.body
-            formData._idproduct=req.params.slug
-            const comment=new Comment(formData)
+            
+            const comment=new Comment()
+            comment.id_product=req.params.slug
+            comment.nameuser=req.body.nameuser
+            comment.lock=false
+            comment.message=req.body.message
             comment.save()
             .then(()=>res.redirect('/singleproduct/'+req.params.slug))
             .catch(error=>{
@@ -95,7 +98,7 @@ class SingleProductController{
             {
 
                 
-                Product.findOne({_slug:req.params.slug})
+                Product.findOne({slug:req.params.slug})
                 .then(data=>{
                     data=mongooseToObject(data)
                     if(!req.session.data)
